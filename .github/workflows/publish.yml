@@ -5,6 +5,10 @@ on:
     types: [published]
   workflow_dispatch:
 
+concurrency:
+  group: publish-pypi-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: read
 
@@ -31,6 +35,17 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Verify release tag matches package version
+        if: github.event_name == 'release'
+        run: |
+          VERSION="$(python - <<'PY'
+          import tomllib
+          with open("pyproject.toml", "rb") as f:
+              print(tomllib.load(f)["project"]["version"])
+          PY
+          )"
+          test "${GITHUB_REF_NAME}" = "v${VERSION}"
+
       - name: Sync dependencies
         run: uv sync --all-extras --group dev
 
@@ -48,3 +63,5 @@ jobs:
 
       - name: Publish distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
