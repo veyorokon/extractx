@@ -59,7 +59,7 @@ extractx = { path = "../extractx", editable = true }
 
 Declare the extra on the dependency string; keep the editable path in
 `tool.uv.sources`. If your workspace manager cannot compose extras with path
-sources, add `pydantic-ai>=1.56.0` directly in the consuming project.
+sources, add `pydantic-ai>=1.99.0` directly in the consuming project.
 
 Optional spaCy NER candidate generation lives behind the `spacy` extra:
 

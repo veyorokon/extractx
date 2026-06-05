@@ -36,7 +36,7 @@ create `pyproject.toml` with:
   - `license = { text = "MIT" }` (provisional — revisit if needed)
   - `dependencies = ["pydantic>=2.0,<3", "opentelemetry-api>=1.20", "opentelemetry-sdk>=1.20", "msgspec>=0.18"]`
 - **`[project.optional-dependencies]`**
-  - `pydantic_ai = ["pydantic-ai>=0.0.13"]` — default llm-backed Selector per ADR-0002; also provides the message-history serialization that powers `.interview()`
+  - `pydantic_ai = ["pydantic-ai>=1.99.0"]` — default llm-backed Selector per ADR-0002; also provides the message-history serialization that powers `.interview()`
   - `unstructured = ["unstructured>=0.12"]` — **provisional.** the default document adapter is under research (`docs/tasks/select-default-document-adapter.md`). this entry may be replaced or removed based on the finding. include it in the skeleton so the `extras/unstructured/` module tree exists; do not implement the adapter.
   - `modal = ["modal>=0.60"]`
   - `ray = ["ray>=2.9"]`
