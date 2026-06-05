@@ -1,0 +1,57 @@
+{
+  "schema_version": "extractx_eval.smoke_dataset.v1",
+  "dataset_id": "shared-invoice-v1",
+  "cases": [
+    {
+      "case_id": "acme-2020-invoice",
+      "document_path": "acme_invoice_excerpt.txt",
+      "schema_id": "invoice_summary_v1",
+      "expected_instances": [
+        {
+          "fields": [
+            {"field_id": "vendor_id", "value": "VND-1001"},
+            {"field_id": "invoice_date", "value": "April 13, 2020"},
+            {"field_id": "due_date", "value": "April 28, 2020"},
+            {"field_id": "tax_rate", "value": "2.25%"},
+            {"field_id": "total_amount", "value": "$220.18"},
+            {"field_id": "subtotal_amount", "value": "$700.00"}
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "brightpath-2020-invoice",
+      "document_path": "brightpath_invoice_excerpt.txt",
+      "schema_id": "invoice_summary_v1",
+      "expected_instances": [
+        {
+          "fields": [
+            {"field_id": "vendor_id", "value": "VND-1002"},
+            {"field_id": "invoice_date", "value": "August 18, 2020"},
+            {"field_id": "due_date", "value": "September 17, 2020"},
+            {"field_id": "tax_rate", "value": "4.25%"},
+            {"field_id": "total_amount", "value": "$4.34"},
+            {"field_id": "subtotal_amount", "value": "$250.00"}
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "cascade-2023-invoice",
+      "document_path": "cascade_invoice_excerpt.txt",
+      "schema_id": "invoice_summary_v1",
+      "expected_instances": [
+        {
+          "fields": [
+            {"field_id": "vendor_id", "value": "VND-1003"},
+            {"field_id": "invoice_date", "value": "September 6, 2023"},
+            {"field_id": "due_date", "value": "October 6, 2023"},
+            {"field_id": "tax_rate", "value": "1.25%"},
+            {"field_id": "total_amount", "value": "$64.85"},
+            {"field_id": "subtotal_amount", "value": "$260.00"}
+          ]
+        }
+      ]
+    }
+  ]
+}

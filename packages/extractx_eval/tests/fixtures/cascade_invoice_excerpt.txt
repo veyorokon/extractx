@@ -1,0 +1,14 @@
+Source fixture: synthetic invoice excerpt for extractx_eval tests.
+
+This is one already-scoped document excerpt. It is used as an extraction
+case only; customer identity and downstream account correlation remain outside
+extractx.
+
+VENDOR NAME: Cascade Office Group
+VENDOR ID: VND-1003
+
+Invoice INV-1003 was issued on September 6, 2023 for workstation equipment.
+The subtotal amount is $260.00.
+The applied tax rate is 1.25%.
+The total amount due is $64.85.
+Payment is due by October 6, 2023.

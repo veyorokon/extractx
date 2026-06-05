@@ -1,0 +1,14 @@
+Source fixture: synthetic invoice excerpt for extractx_eval tests.
+
+This is one already-scoped document excerpt. It is used as an extraction
+case only; customer identity and downstream account correlation remain outside
+extractx.
+
+VENDOR NAME: BrightPath Services
+VENDOR ID: VND-1002
+
+Invoice INV-1002 was issued on August 18, 2020 for maintenance services.
+The subtotal amount is $250.00.
+The applied tax rate is 4.25%.
+The total amount due is $4.34.
+Payment is due by September 17, 2020.

@@ -1,0 +1,29 @@
+# pinned to exact revs per docs/tasks/bootstrap-project-skeleton.md area 5.
+# floating refs (main/stable/latest) are not used — version bumps are
+# explicit maintenance commits. worker surfaced that microsoft/pyright
+# does not publish a pre-commit hook manifest; the community-standard
+# hook lives at RobertCraigie/pyright-python, which is what the pyright
+# team recommends for pre-commit integration.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        # uv.lock is a resolved dependency graph; it legitimately exceeds
+        # the default 500 KB threshold and should not be gated by this hook.
+        exclude: ^uv\.lock$
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.11
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.408
+    hooks:
+      - id: pyright

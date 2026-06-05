@@ -1,0 +1,14 @@
+Source fixture: synthetic invoice excerpt for extractx_eval tests.
+
+This is one already-scoped document excerpt. It is used as an extraction
+case only; customer identity and downstream account correlation remain outside
+extractx.
+
+VENDOR NAME: Acme Supply Co.
+VENDOR ID: VND-1001
+
+Invoice INV-1001 was issued on April 13, 2020 for office supplies.
+The subtotal amount is $700.00.
+The applied tax rate is 2.25%.
+The total amount due is $220.18.
+Payment is due by April 28, 2020.
